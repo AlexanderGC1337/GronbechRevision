@@ -16,7 +16,7 @@
     </aside>
     <nav>
         <div class="grid grid-flow-col gap-4 place-items-center">
-            <a>
+            <a href="https://www.facebook.com/gronbechrevision" target="_blank">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -30,7 +30,7 @@
                 </svg>
             </a>
 
-            <a>
+            <a href="https://wa.me/4526367823" target="_blank">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

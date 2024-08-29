@@ -12,7 +12,7 @@
                   <p>Som specialist i bogføring og regnskab hjælper jeg små enkeltmandsvirksomheder og mindre selskaber med at gøre deres økonomistyring så smidig som muligt.</p>
                   <p>Min digitale tilgang gør det muligt at assistere dig, uanset hvor du befinder dig. Tillid og troværdighed er kerneværdier i mit arbejde.</p>
                   <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mt-6 mb-2">Min baggrund</h3>
-                  <p>Uddannet kontorassistent i 1993, har jeg over 25 års erfaring og er konstant opdateret med de nyeste tendenser og regler i branchen.</p>
+                  <p>Som uddannet kontorassistent i 1993, har jeg over 25 års erfaring og er konstant opdateret med de nyeste tendenser og regler i branchen.</p>
                   <p>Jeg ser frem til at hjælpe dig med din bogføring, så du kan fokusere på at drive din virksomhed.</p>
               </div>
           </div>
