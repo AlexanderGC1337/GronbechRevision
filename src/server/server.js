@@ -14,7 +14,7 @@ const app = express();
 
 // Middleware
 app.use(bodyParser.json());
-app.use(express.static('build')); // Assuming 'build' is where your SvelteKit app is built
+app.use(express.static('build'));
 
 // Set up SendGrid
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -22,9 +22,13 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 app.post('/api/send-email', async (req, res) => {
   const { navn, tlf, mail, cvr, emne, besked } = req.body;
 
+  // Log the environment variables (remove in production)
+  console.log('FROM_EMAIL:', process.env.FROM_EMAIL);
+  console.log('TO_EMAIL:', process.env.TO_EMAIL);
+
   const msg = {
     to: process.env.TO_EMAIL,
-    from: process.env.FROM_EMAIL, // This needs to be a verified sender in SendGrid
+    from: process.env.FROM_EMAIL,
     subject: `Ny henvendelse: ${emne}`,
     text: `
       Navn: ${navn}
@@ -46,10 +50,25 @@ app.post('/api/send-email', async (req, res) => {
   };
 
   try {
-    await sgMail.send(msg);
-    res.status(200).json({ message: 'Email sendt succesfuldt' });
+    console.log('Attempting to send email...');
+    console.log('Message details:', JSON.stringify(msg, null, 2));
+    
+    const [response] = await sgMail.send(msg);
+    
+    console.log('SendGrid Response:', JSON.stringify(response, null, 2));
+    
+    if (response.statusCode >= 200 && response.statusCode < 300) {
+      console.log('Email sent successfully');
+      res.status(200).json({ message: 'Email sendt succesfuldt' });
+    } else {
+      console.error('Unexpected status code from SendGrid:', response.statusCode);
+      res.status(500).json({ message: 'Uventet fejl ved afsendelse af email' });
+    }
   } catch (error) {
-    console.error('Fejl ved afsendelse af email:', error);
+    console.error('Error sending email:', error);
+    if (error.response) {
+      console.error(error.response.body);
+    }
     res.status(500).json({ message: 'Kunne ikke sende email' });
   }
 });
