@@ -11,7 +11,7 @@
     status = 'Sender...';
     
     try {
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +51,7 @@
         </div>
         <div>
           <label for="tlf" class="block text-sm font-medium text-gray-700 mb-1">Telefon nr. (8 cifre)</label>
-          <input id="tlf" type="tel" bind:value={tlf} on:input={(e) => validateNumber(e, 'tlf')} required pattern="[0-9]{8}" maxlength="8" class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg" />
+          <input id="tlf" bind:value={tlf} on:input={(e) => validateNumber(e, 'tlf')}  maxlength="8" class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg" />
         </div>
         <div>
           <label for="mail" class="block text-sm font-medium text-gray-700 mb-1">Mail</label>
@@ -59,7 +59,7 @@
         </div>
         <div>
           <label for="cvr" class="block text-sm font-medium text-gray-700 mb-1">CVR (8 cifre)</label>
-          <input id="cvr" type="text" bind:value={cvr} on:input={(e) => validateNumber(e, 'cvr')} required pattern="[0-9]{8}" maxlength="8" class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg" />
+          <input id="cvr" type="text" bind:value={cvr} on:input={(e) => validateNumber(e, 'cvr')} maxlength="8" class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg" />
         </div>
       </div>
       <div>
