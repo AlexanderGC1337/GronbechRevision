@@ -36,9 +36,11 @@
              class:h-16={isScrolled}>
             <!-- Logo -->
             <div class="flex-shrink-0">
-                <img src={logo} alt="Logo" class="transition-all duration-300 ease-in-out"
-                     class:h-16={!isScrolled}
-                     class:h-12={isScrolled} />
+                <a href="/">
+                    <img src={logo} alt="Logo" class="transition-all duration-300 ease-in-out"
+                         class:h-16={!isScrolled}
+                         class:h-12={isScrolled} />
+                </a>
             </div>
             
             <!-- Desktop Links (hidden on mobile) -->

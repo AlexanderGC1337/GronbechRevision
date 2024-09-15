@@ -50,7 +50,7 @@
   }
 </script>
 
-<div class="max-w-2xl mx-auto mt-8 p-8 bg-white shadow-lg rounded-lg">
+<div id="kontakt" class="max-w-2xl mx-auto mt-8 p-8 bg-white shadow-lg rounded-lg">
   <form on:submit|preventDefault={handleSubmit} class="space-y-6">
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div>

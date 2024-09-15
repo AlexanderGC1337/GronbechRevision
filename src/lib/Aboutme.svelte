@@ -1,7 +1,7 @@
 <script>
   import Profile from "./assets/images/profile.jpg";
 </script>
-<div class="mb-10" id="ommig">‎ </div>
+<div class="" id="ommig">‎ </div>
 <div class="relative w-full max-w-6xl rounded border overflow-hidden my-8 sm:my-12 bg-white shadow-lg mx-auto">
   <div class="flex flex-col lg:flex-row">
       <div class="lg:w-1/2 order-2 lg:order-1 px-6 py-8 lg:px-12 lg:py-12">
