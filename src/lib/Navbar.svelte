@@ -23,6 +23,23 @@
     onMount(() => {
         handleScroll(); // Initial check
     });
+
+    function scrollToSection(id: string) {
+        closeMobileMenu();
+        setTimeout(() => {
+            const element = document.getElementById(id);
+            if (element) {
+                const headerOffset = 100; // Adjust this value based on your header height
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        }, 100); // Small delay to ensure the element exists in the DOM
+    }
 </script>
 
 <svelte:window on:scroll={handleScroll} />
@@ -36,7 +53,7 @@
              class:h-16={isScrolled}>
             <!-- Logo -->
             <div class="flex-shrink-0">
-                <a href="/">
+                <a href="/" on:click|preventDefault={() => scrollToSection('top')}>
                     <img src={logo} alt="Logo" class="transition-all duration-300 ease-in-out"
                          class:h-16={!isScrolled}
                          class:h-12={isScrolled} />
@@ -46,13 +63,13 @@
             <!-- Desktop Links (hidden on mobile) -->
             <div class="hidden md:flex items-center space-x-1 lg:space-x-4 font-semibold tracking-wide">
                 <a href="/" class="text-gray-800 hover:text-primary px-2 lg:px-3 py-2 rounded-md text-sm uppercase">Forside</a>
-                <a href="#ydelser" class="text-gray-800 hover:text-primary px-2 lg:px-3 py-2 rounded-md text-sm uppercase">Ydelser</a>
-                <a href="#ommig" class="text-gray-800 hover:text-primary px-2 lg:px-3 py-2 rounded-md text-sm uppercase">Om mig</a>
+                <a href="#ydelser" on:click|preventDefault={() => scrollToSection('ydelser')} class="text-gray-800 hover:text-primary px-2 lg:px-3 py-2 rounded-md text-sm uppercase">Ydelser</a>
+                <a href="#ommig" on:click|preventDefault={() => scrollToSection('ommig')} class="text-gray-800 hover:text-primary px-2 lg:px-3 py-2 rounded-md text-sm uppercase">Om mig</a>
             </div>
 
             <!-- Contact Button and Burger Menu -->
             <div class="flex items-center space-x-2">
-                <a href="#kontakt" class="btn glass md:btn-wide bg-orange-500 hover:bg-orange-400 text-white border-none uppercase tracking-wider transition-all duration-300 ease-in-out text-xs md:text-sm"
+                <a href="#kontakt" on:click|preventDefault={() => scrollToSection('kontakt')} class="btn glass md:btn-wide bg-orange-500 hover:bg-orange-400 text-white border-none uppercase tracking-wider transition-all duration-300 ease-in-out text-xs md:text-sm"
                    class:px-3={!isScrolled}
                    class:px-2={isScrolled}
                    class:py-1={!isScrolled}
@@ -74,9 +91,9 @@
     {#if isMobileMenuOpen}
     <div class="md:hidden" transition:fade={{ duration: 200 }}>
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-md">
-            <a href="/" on:click={closeMobileMenu} class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Forside</a>
-            <a href="#ydelser" on:click={closeMobileMenu} class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Ydelser</a>
-            <a href="#ommig" on:click={closeMobileMenu} class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Om mig</a>
+            <a href="/" on:click|preventDefault={() => scrollToSection('top')} class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Forside</a>
+            <a href="#ydelser" on:click|preventDefault={() => scrollToSection('ydelser')} class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Ydelser</a>
+            <a href="#ommig" on:click|preventDefault={() => scrollToSection('ommig')} class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Om mig</a>
         </div>
     </div>
     {/if}

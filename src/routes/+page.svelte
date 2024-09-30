@@ -55,6 +55,8 @@
 
     let testMode: Boolean = false;
     import Partnere from "$lib/Partnere.svelte";
+
+    
 </script>
 
 {#if testMode}
@@ -171,9 +173,9 @@
 
     <AndreYdelser/>
 
-    <Aboutme />
-
     <Partnere />
+
+    <Aboutme />
 
     <Contact />
 {/if}
