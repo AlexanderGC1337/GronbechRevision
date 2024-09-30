@@ -59,6 +59,7 @@
     
 </script>
 
+
 {#if testMode}
     <Partnere />
 {:else if !testMode}
