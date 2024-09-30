@@ -10,7 +10,7 @@
           "En lovpligtig KYC kontrol jf. Hvidvaskloven § 7",
           "Gennemgang af nuværende e-conomic aftale eller",
           "Oprettelse af ny e-conomic aftale",
-          "Tilpasning af kontoplan, varemodel, kundemodel, leverandørmodul så den passer din virksomhed",
+          "Tilpasning af kontoplan, varemodul, kundemodul, leverandørmodul så den passer din virksomhed",
           "Automatisering af forskellige processer f.eks bankintegration, evt. indberetning af moms mm.",
           "Adgang til Skattekonto, indberetning af moms, lønsum mv.",
           "Opsætning af rykkerprocedure",
@@ -39,9 +39,21 @@
       lonadministration: {
         title: "Lønadministration",
         price: "kr. 100,00",
-        description: "Har du ansatte og ønsker min hjælp til din lønadministration kan jeg nævne, at jeg er lønpartner hos Datalen og anbefaler, at du bruger dette program.",
+        description: "Har du ansatte og ønsker min hjælp til din lønadministration kan jeg nævne, at jeg er lønpartner hos Dataløn og anbefaler, at du bruger dette program.",
         priceDescription: "pr. lønseddel og sørger for, at dine medarbejdere er sat rigtigt op og får deres korrekte løn til rette tid.",
-        note: "Pris til Datalen er ikke med i denne pris."
+        note: "Pris til Dataløn er ikke med i denne pris."
+      },
+      aarsregnskab: {
+        title: "Årsregnskab",
+        price: "kr. 3.500,00",
+        description: "Jeg klargør dit bogholderi til årsregnskab hvis du ønsker at bruge en revisor til det.",
+        priceDescription: "Jeg har et samarbejde med en revisor i Aarhus, som laver årsregnskabet. Han sender mig en liste over opgaver jeg skal lave klar til årsregnskabet. Din pris for dette aftaler I selv indbyrdes. Jeg formidler kontakten og når jeg har stået for din bogføring igennem året, afspejles det i din pris for årsregnskabet."
+      },
+      enkeltmandsvirksomheder: {
+        title: "Enkeltmandsvirksomheder - ikke VSO",
+        price: "kr. 6.900,00",
+        description: "Jeg laver en årsrapport, et skattehæfte samt en oplysningsseddel til din private årsopgørelse.",
+        priceDescription: "Jeg guider dig ved indberetning."
       }
     };
   
@@ -50,7 +62,7 @@
     }
   </script>
   
-  <div class="min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8">
+  <div class="min-h-screen p-4 sm:p-6 md:p-8">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-800 text-center mb-6 sm:mb-8 md:mb-12">
         Når du bliver kunde hos mig
