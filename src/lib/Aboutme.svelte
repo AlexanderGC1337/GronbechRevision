@@ -43,7 +43,3 @@
       </div>
   </div>
 </div>
-
-<style>
-  /* Add any additional styles here if needed */
-</style>

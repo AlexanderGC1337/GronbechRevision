@@ -19,7 +19,7 @@
       },
       lobende: {
         title: "Løbende bogføring",
-        price: "kr. 455,00",
+        price: "kr. 455,00 pr. time.",
         description: "I denne timepris indgår:",
         items: [
           "Løbende bogføring, fakturering, og bankafstemning",
@@ -38,9 +38,9 @@
       },
       lonadministration: {
         title: "Lønadministration",
-        price: "kr. 100,00",
+        price: "kr. 100,00 pr. lønseddel.",
         description: "Har du ansatte og ønsker min hjælp til din lønadministration kan jeg nævne, at jeg er lønpartner hos Dataløn og anbefaler, at du bruger dette program.",
-        priceDescription: "pr. lønseddel og sørger for, at dine medarbejdere er sat rigtigt op og får deres korrekte løn til rette tid.",
+        priceDescription: "Jeg sørger for, at dine medarbejdere er sat rigtigt op og får deres korrekte løn til rette tid.",
         note: "Pris til Dataløn er ikke med i denne pris."
       },
       aarsregnskab: {
