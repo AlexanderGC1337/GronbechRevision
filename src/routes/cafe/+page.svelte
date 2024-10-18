@@ -99,7 +99,7 @@
         </div>
         <div class="max-w-4xl text-center mx-auto flex flex-col gap-4">
             <p class="select-none">
-                Så kan du melde dig til min <span class="text-blue-600 font-semibold">bogføringscafé</span> og få hjælp til der der
+                Så kan du melde dig til min <span class="text-blue-600 font-semibold">bogføringscafé</span> og få hjælp til det der
                 spænder ben. <br class="hidden md:inline" /> Bogføring <span class="font-bold">behøver</span>
                 ikke være svært!
             </p>
