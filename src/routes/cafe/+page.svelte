@@ -120,7 +120,7 @@
     <div class="container mx-auto px-4 py-8 mt-20 mb-10">
         <h1 class="text-3xl font-bold mb-6 text-center">Kommende Caféer</h1>
         <div
-            class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4"
+            class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4"
         >
             {#each events as event}
 
@@ -138,7 +138,7 @@
                                 {event.title}
                             </h5>
                             <span
-                                class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded mt-[5px]"
+                                class="bg-green-100 text-green-800 text-xs font-bold px-1.5 py-0.5 rounded mt-[5px]"
                                 >{event.time}</span
                             >
                         </div>

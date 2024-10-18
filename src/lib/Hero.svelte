@@ -50,17 +50,17 @@ style={backgroundStyle}
   >
     <div class="flex flex-col items-center">
       <h1 class="mb-5 font-bold leading-tight {fontSize}">Digital bogføring i øjenhøjde</h1>
-      <div class="flex gap-2">
+      <div class="flex gap-2 md:flex-row flex-col">
 
         <a 
           href="tel:+45-42210418" 
-          class="btn btn-md uppercase tracking-wider  bg-orange-500 hover:bg-orange-400 text-base-100 border-none text-sm sm:text-base transition-all duration-300 ease-in-out md:btn-wide"
+          class="btn btn-wide uppercase tracking-wider  bg-orange-500 hover:bg-orange-400 text-base-100 border-none text-sm sm:text-base transition-all duration-300 ease-in-out"
         >
           Ring nu
         </a>
         <a 
           href="mailto:kontor@gronbechrevision.dk" 
-          class="btn btn-md uppercase tracking-wider  bg-orange-500 hover:bg-orange-400 text-base-100 border-none text-sm sm:text-base transition-all duration-300 ease-in-out md:btn-wide"
+          class="btn btn-wide uppercase tracking-wider  bg-orange-500 hover:bg-orange-400 text-base-100 border-none text-sm sm:text-base transition-all duration-300 ease-in-out "
         >
           Send email
         </a>

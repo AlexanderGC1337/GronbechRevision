@@ -154,7 +154,7 @@
                     >Om mig</a
                 >
                 <a
-                    href="/cafe"
+                href="/cafe" on:click|preventDefault={() => openLinkAndClose('/cafe')}
                     class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
                     >Bogføringscafé</a
                 >
