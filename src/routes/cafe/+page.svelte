@@ -91,29 +91,29 @@
 <section class="container mx-auto">
     <div class="mt-20 md:mt-40 px-4 md:px-0">
         <div class="my-6 md:my-10">
-            <h1 class="text-2xl md:text-3xl text-center">
+            <h1 class="text-2xl md:text-3xl text-center select-none">
                 Har du lyst til at være <span class="font-bold">herre</span>
                 over dit <span class="font-bold">eget</span> bogholderi?
             </h1>
-            <p class="text-center">____________</p>
+            <p class="text-center select-none">____________</p>
         </div>
         <div class="max-w-4xl text-center mx-auto flex flex-col gap-4">
-            <p>
+            <p class="select-none">
                 Så kan du melde dig til min <span class="text-blue-600 font-semibold">bogføringscafé</span> og få hjælp til der der
                 spænder ben. <br class="hidden md:inline" /> Bogføring <span class="font-bold">behøver</span>
                 ikke være svært!
             </p>
-            <p>
+            <p class="select-none">
                 Mød op til en hyggelig eftermiddag, sammen med andre <span class="text-green-600 font-semibold">solo-selvstændige</span>, med det formål at komme i bund
                 med din bogføring. <br class="hidden md:inline" /> Du sidder selv med dit bogholderi og jeg er der til at støtte dig og svare på dine spørgsmål. <br class="hidden md:inline" /> Når du tilmelder dig, har du allerede din første dato for at få lavet din bogføring.
             </p>
-            <p>
+            <p class="select-none">
                 Det eneste du skal have med, er din bærbare pc, adgang til dine bilag og et godt <span class=" text-blue-600 font-semibold">humør</span>, så klarer jeg resten.
             </p>
         </div>
 
         <div>
-            <p class="font-bold text-center my-10">Caféen er for solo-sevlstændige som kun benytter sig af e-conomic. <br> Ved aflysning mindre end 48 timer før refunderes indbetalt beløb ikke.</p>
+            <p class="font-bold text-center my-10 select-none">Caféen er for solo-sevlstændige som kun benytter sig af e-conomic. <br> Ved aflysning mindre end 48 timer før refunderes indbetalt beløb ikke.</p>
         </div>
     </div>
 
