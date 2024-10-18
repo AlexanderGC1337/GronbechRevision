@@ -3,10 +3,11 @@
     import Navbar from "$lib/Navbar.svelte";
     import Footer from "$lib/Footer.svelte";
 
-    
+ 
+   
 </script>
 
-<div class="flex flex-col min-h-screen ">
+<div class="flex flex-col min-h-screen">
     <header class="">
         <Navbar />
     </header>
