@@ -1,8 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
 
-
     onMount(() => {
+        // EasyMe script
         (function (e, m) {
             if (e.getElementById(m)) return;
             var s = document.createElement("script");
@@ -12,6 +12,21 @@
             var el = document.getElementsByTagName("script")[0];
             el.parentNode.insertBefore(s, el);
         })(document, "easyme-connect-Gez7zYmsIYTLcUi7NPEH");
+
+        // Google Tag Manager script
+        const firstScript = document.createElement("script");
+        firstScript.src =
+            "https://www.googletagmanager.com/gtag/js?id=AW-16643300772";
+        firstScript.async = true;
+        document.head.appendChild(firstScript);
+
+        // Initialize dataLayer and gtag function
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "AW-16643300772");
     });
 
     const events = [
@@ -114,10 +129,10 @@
                     class="text-green-600 font-semibold">solo-selvstændige</span
                 >, med det formål at komme i bund med din bogføring.
                 <br class="hidden md:inline" />
-                Du sidder selv med dit bogholderi og jeg er der til at støtte
-                dig og svare på dine spørgsmål. <br class="hidden md:inline" /> Når
-                du tilmelder dig, har du allerede din første dato for at få lavet
-                din bogføring.
+                Du sidder selv med dit bogholderi og jeg er der til at støtte dig
+                og svare på dine spørgsmål. <br class="hidden md:inline" /> Når du
+                tilmelder dig, har du allerede din første dato for at få lavet din
+                bogføring.
             </p>
             <p class="select-none">
                 Det eneste du skal have med, er din bærbare pc, adgang til dine
@@ -268,8 +283,10 @@
                 Er du i tvivl om du skal deltage i min bogføringscafé, så book
                 en afklarende samtale. Det er ganske gratis!
             </h3>
-            <a class="btn btn-wide bg-blue-600 glass text-white hover:bg-blue-800" href="https://ezme.io/c/XEO/CQ6L" target="_blank"
-                >Book tid</a
+            <a
+                class="btn btn-wide bg-blue-600 glass text-white hover:bg-blue-800"
+                href="https://ezme.io/c/XEO/CQ6L"
+                target="_blank">Book tid</a
             >
         </div>
     </div>
