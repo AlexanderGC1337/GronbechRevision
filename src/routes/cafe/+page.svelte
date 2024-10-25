@@ -22,7 +22,7 @@
   }
 
     const events = [
-        {
+       /*  {
             title: "Bogførings cafe - Viborg",
             date: "5. nov 2024",
             time: "14-00-17:00",
@@ -33,7 +33,7 @@
             date: "12. nov 2024",
             time: "14-00-17:00",
             link: "https://ezme.io/c/XEO/CQ6Z",
-        },
+        }, */
         {
             title: "Bogførings cafe - Viborg",
             date: "19. nov 2024",
@@ -146,7 +146,7 @@
     <div class="container mx-auto px-4 py-8 mt-20 mb-10">
         <h1 class="text-3xl font-bold mb-6 text-center">Kommende Caféer</h1>
         <div
-            class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4"
+            class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 [&>*:last-child:nth-child(3n-1)]:lg:col-start-2 [&>*:last-child:nth-child(3n-2)]:xl:col-start-2"
         >
             {#each events as event}
                 <a
