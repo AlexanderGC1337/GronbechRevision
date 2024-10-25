@@ -1,16 +1,18 @@
 <script lang="ts">
     import { onMount } from "svelte";
 
+
     onMount(() => {
-        (function(e,m) {
-		if(e.getElementById(m))return;var s=document.createElement('script');s.id=m;
-		s.src='https://secure.easyme.biz/connect/v3/client.js';s.async=true;
-		var el = document.getElementsByTagName('script')[0];el.parentNode.insertBefore(s,el);
-		})(document, 'easyme-connect-Gez7zYmsIYTLcUi7NPEH');
-    })
-
-    
-
+        (function (e, m) {
+            if (e.getElementById(m)) return;
+            var s = document.createElement("script");
+            s.id = m;
+            s.src = "https://secure.easyme.biz/connect/v3/client.js";
+            s.async = true;
+            var el = document.getElementsByTagName("script")[0];
+            el.parentNode.insertBefore(s, el);
+        })(document, "easyme-connect-Gez7zYmsIYTLcUi7NPEH");
+    });
 
     const events = [
         {
@@ -99,21 +101,38 @@
         </div>
         <div class="max-w-4xl text-center mx-auto flex flex-col gap-4">
             <p class="select-none">
-                Så kan du melde dig til min <span class="text-blue-600 font-semibold">bogføringscafé</span> og få hjælp til det der
-                spænder ben. <br class="hidden md:inline" /> Bogføring <span class="font-bold">behøver</span>
+                Så kan du melde dig til min <span
+                    class="text-blue-600 font-semibold">bogføringscafé</span
+                >
+                og få hjælp til det der spænder ben.
+                <br class="hidden md:inline" />
+                Bogføring <span class="font-bold">behøver</span>
                 ikke være svært!
             </p>
             <p class="select-none">
-                Mød op til en hyggelig eftermiddag, sammen med andre <span class="text-green-600 font-semibold">solo-selvstændige</span>, med det formål at komme i bund
-                med din bogføring. <br class="hidden md:inline" /> Du sidder selv med dit bogholderi og jeg er der til at støtte dig og svare på dine spørgsmål. <br class="hidden md:inline" /> Når du tilmelder dig, har du allerede din første dato for at få lavet din bogføring.
+                Mød op til en hyggelig eftermiddag, sammen med andre <span
+                    class="text-green-600 font-semibold">solo-selvstændige</span
+                >, med det formål at komme i bund med din bogføring.
+                <br class="hidden md:inline" />
+                Du sidder selv med dit bogholderi og jeg er der til at støtte
+                dig og svare på dine spørgsmål. <br class="hidden md:inline" /> Når
+                du tilmelder dig, har du allerede din første dato for at få lavet
+                din bogføring.
             </p>
             <p class="select-none">
-                Det eneste du skal have med, er din bærbare pc, adgang til dine bilag og et godt <span class=" text-blue-600 font-semibold">humør</span>, så klarer jeg resten.
+                Det eneste du skal have med, er din bærbare pc, adgang til dine
+                bilag og et godt <span class=" text-blue-600 font-semibold"
+                    >humør</span
+                >, så klarer jeg resten.
             </p>
         </div>
 
         <div>
-            <p class="font-bold text-center my-10 select-none">Caféen er for solo-sevlstændige som kun benytter sig af e-conomic. <br> Ved aflysning mindre end 48 timer før refunderes indbetalt beløb ikke.</p>
+            <p class="font-bold text-center my-10 select-none">
+                Caféen er for solo-sevlstændige som kun benytter sig af
+                e-conomic. <br /> Ved aflysning mindre end 48 timer før refunderes
+                indbetalt beløb ikke.
+            </p>
         </div>
     </div>
 
@@ -123,11 +142,9 @@
             class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4"
         >
             {#each events as event}
-
                 <a
                     href={event.link}
                     target="_blank"
-                
                     class="block bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 transition-colors duration-200"
                 >
                     <div class="p-4">
@@ -167,51 +184,93 @@
 
     <div class="container mx-auto mb-24 px-4">
         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
-          <!-- Det praktiske -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <div class="bg-blue-100 px-6 py-4">
-              <h2 class="text-blue-800 text-2xl font-semibold text-center">Det praktiske</h2>
+            <!-- Det praktiske -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="bg-blue-100 px-6 py-4">
+                    <h2
+                        class="text-blue-800 text-2xl font-semibold text-center"
+                    >
+                        Det praktiske
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="text-center">
+                        <p class="text-gray-600 mb-2">Vi mødes på</p>
+                        <p class="font-medium">Toldboden 1</p>
+                        <p class="font-medium">8800 Viborg</p>
+                    </div>
+                </div>
             </div>
-            <div class="p-6">
-              <div class="text-center">
-                <p class="text-gray-600 mb-2">Vi mødes på</p>
-                <p class="font-medium">Toldboden 1</p>
-                <p class="font-medium">8800 Viborg</p>
-              </div>
+
+            <!-- Parkering -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="bg-blue-100 px-6 py-4">
+                    <h2
+                        class="text-blue-800 text-2xl font-semibold text-center"
+                    >
+                        Parkering
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <p class="text-center text-gray-600 mb-2">
+                        Parking i terræn (kun gæster):
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 text-center">
+                        <li>2 timers parkering ved at stille p-skiven</li>
+                        <li>
+                            Betalingsparking via app iht. skiltning på pladsen
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
-      
-          <!-- Parkering -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <div class="bg-blue-100 px-6 py-4">
-              <h2 class="text-blue-800 text-2xl font-semibold text-center">Parkering</h2>
-            </div>
-            <div class="p-6">
-              <p class="text-center text-gray-600 mb-2">Parking i terræn (kun gæster):</p>
-              <ul class="list-disc list-inside text-gray-700 text-center">
-                <li>2 timers parkering ved at stille p-skiven</li>
-                <li>Betalingsparking via app iht. skiltning på pladsen</li>
-              </ul>
-            </div>
-          </div>
-      
-          <!-- Klippekort -->
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <div class="bg-blue-100 px-6 py-4 flex justify-center items-center gap-5">
-              <h2 class="text-blue-800 text-2xl font-semibold text-center">Klippekort</h2>
-              <a class="text-xs text-yellow-100 hover:underline px-2 py-[3px] bg-blue-500 rounded-full" href="https://ezme.io/c/XEO/CTXY" target="_blank">Køb her</a>
-            </div>
-            <div class="p-6">
-              <div class="text-center">
-                <p class="text-gray-600 mb-4">Du kan også købe klippekort til 3x bogføringscaféer.</p>
-                <p class="text-gray-700">Normalpris: <span class="font-medium">2.700,- + moms</span></p>
-                <p class="text-gray-700"><span class="font-bold">Din pris:</span> <span class="font-medium text-green-600">2.400,- + moms</span></p>
-                <!-- <button class="btn btn-wide glass hover:bg-blue-500 bg-blue-100 mt-5">
+
+            <!-- Klippekort -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div
+                    class="bg-blue-100 px-6 py-4 flex justify-center items-center gap-5"
+                >
+                    <h2
+                        class="text-blue-800 text-2xl font-semibold text-center"
+                    >
+                        Klippekort
+                    </h2>
+                    <a
+                        class="text-xs text-yellow-100 hover:underline px-2 py-[3px] bg-blue-500 rounded-full"
+                        href="https://ezme.io/c/XEO/CTXY"
+                        target="_blank">Køb her</a
+                    >
+                </div>
+                <div class="p-6">
+                    <div class="text-center">
+                        <p class="text-gray-600 mb-4">
+                            Du kan også købe klippekort til 3x bogføringscaféer.
+                        </p>
+                        <p class="text-gray-700">
+                            Normalpris: <span class="font-medium"
+                                >2.700,- + moms</span
+                            >
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-bold">Din pris:</span>
+                            <span class="font-medium text-green-600"
+                                >2.200,- + moms</span
+                            >
+                        </p>
+                        <!-- <button class="btn btn-wide glass hover:bg-blue-500 bg-blue-100 mt-5">
                     <a class="text-blue-800" href="https://ezme.io/c/XEO/CTXY" target="_blank">Køb</a>
                 </button> -->
-              </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+        <div class="flex justify-center flex-col items-center">
+            <h3 class="text-2xl text-center my-5">
+                Er du i tvivl om du skal deltage i min bogføringscafé, så book
+                en afklarende samtale. Det er ganske gratis!
+            </h3>
+            <a class="btn btn-wide bg-blue-600 glass text-white hover:bg-blue-800" href="https://ezme.io/c/XEO/CQ6L" target="_blank"
+                >Book tid</a
+            >
+        </div>
+    </div>
 </section>

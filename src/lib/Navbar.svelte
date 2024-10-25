@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import { fade } from "svelte/transition";
     import logo from "$lib/assets/images/logo.png";
+    import { page } from '$app/stores';
 
     let navbar: HTMLElement;
     let isScrolled = false;
@@ -70,6 +71,7 @@
             </div>
 
             <!-- Desktop Links (hidden on mobile) -->
+            {#if $page.url.pathname !== '/cafe'}
             <div
                 class="hidden md:flex items-center space-x-1 lg:space-x-4 font-semibold tracking-wide"
             >
@@ -96,8 +98,12 @@
                     >Bogføringscafé</a
                 >
             </div>
+            {:else}
+
+            {/if}
 
             <!-- Contact Button and Burger Menu -->
+            {#if $page.url.pathname !== '/cafe'}
             <div class="flex items-center space-x-2">
                 <a
                     href="#kontakt"
@@ -128,11 +134,16 @@
                     </svg>
                 </button>
             </div>
+                {:else}
+                <!-- none -->
+                {/if}
+            
         </div>
     </div>
 
+    
     <!-- Mobile menu -->
-    {#if isMobileMenuOpen}
+    {#if isMobileMenuOpen && $page.url.pathname !== '/cafe'}
         <div class="md:hidden" transition:fade={{ duration: 200 }}>
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-md">
                 <a
