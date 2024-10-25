@@ -12,22 +12,14 @@
             var el = document.getElementsByTagName("script")[0];
             el.parentNode.insertBefore(s, el);
         })(document, "easyme-connect-Gez7zYmsIYTLcUi7NPEH");
-
-        // Google Tag Manager script
-        const firstScript = document.createElement("script");
-        firstScript.src =
-            "https://www.googletagmanager.com/gtag/js?id=AW-16643300772";
-        firstScript.async = true;
-        document.head.appendChild(firstScript);
-
-        // Initialize dataLayer and gtag function
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", "AW-16643300772");
     });
+
+    declare global {
+        function gtag_report_conversion(url?: string): boolean;
+    }
+    function handleClick(url) {
+    return gtag_report_conversion(url);
+  }
 
     const events = [
         {
@@ -159,6 +151,7 @@
             {#each events as event}
                 <a
                     href={event.link}
+                    on:click|preventDefault={() => handleClick(event.link)}
                     target="_blank"
                     class="block bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 transition-colors duration-200"
                 >
