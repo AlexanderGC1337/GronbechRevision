@@ -34,12 +34,12 @@
             time: "14-00-17:00",
             link: "https://ezme.io/c/XEO/CQ6Z",
         }, */
-        {
+        /* {
             title: "Bogførings cafe - Viborg",
             date: "19. nov 2024",
             time: "14-00-17:00",
             link: "https://ezme.io/c/XEO/CQDg",
-        },
+        }, */
         {
             title: "Bogførings cafe - Viborg",
             date: "26. nov 2024",

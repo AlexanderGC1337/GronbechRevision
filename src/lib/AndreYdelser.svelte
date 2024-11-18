@@ -19,7 +19,7 @@
       },
       lobende: {
         title: "Løbende bogføring",
-        price: "kr. 455,00 pr. time.",
+        price: "kr. 485,00 pr. time.",
         description: "I denne timepris indgår:",
         items: [
           "Løbende bogføring, fakturering, og bankafstemning",
@@ -31,8 +31,8 @@
         ],
         notes: [
           "Du betaler altid for minimum 1 time. Forbrug herover faktureres pr. halve time.",
-          "Hastetillæg er kr. 455,00 pr. time.",
-          "Skal jeg sidde hos dig er timeprisen kr. 495,00.",
+          "Hastetillæg er kr. 485,00 pr. time.",
+          "Skal jeg sidde hos dig er timeprisen kr. 525,00.",
           "E-conomic abonnement er ikke med i denne pris. Hør nærmere om de abonnementer jeg kan tilbyde til særpris."
         ]
       },
@@ -45,15 +45,17 @@
       },
       aarsregnskab: {
         title: "Årsregnskab",
-        price: "kr. 3.500,00",
+        price: "kr. 3.600,00",
         description: "Jeg klargør dit bogholderi til årsregnskab hvis du ønsker at bruge en revisor til det.",
         priceDescription: "Jeg har et samarbejde med en revisor i Aarhus, som laver årsregnskabet. Han sender mig en liste over opgaver jeg skal lave klar til årsregnskabet. Din pris for dette aftaler I selv indbyrdes. Jeg formidler kontakten og når jeg har stået for din bogføring igennem året, afspejles det i din pris for årsregnskabet."
       },
       enkeltmandsvirksomheder: {
         title: "Enkeltmandsvirksomheder - ikke VSO",
         price: "kr. 6.900,00",
-        description: "Jeg laver en årsrapport, et skattehæfte samt en oplysningsseddel til din private årsopgørelse.",
-        priceDescription: "Jeg guider dig ved indberetning."
+        description: "Jeg laver en årsrapport, et skattehæfte samt en oplysningsseddel til din private årsopgørelse,  jeg guider dig ved indberetning.",
+        priceDescription: "Anvender du virksomhedsordningen henvises til revisor.",
+        
+
       }
     };
   
@@ -116,10 +118,10 @@
             {#if services[activeTab].priceDescription}
               <p class="mt-3 sm:mt-4 text-gray-700 text-sm sm:text-base">{services[activeTab].priceDescription}</p>
             {/if}
-  
             {#if services[activeTab].note}
               <p class="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-600">{services[activeTab].note}</p>
             {/if}
+  
           </div>
         </div>
       </div>

@@ -3,6 +3,12 @@
 
     import Tabs from "$lib/Tabs.svelte";
 
+    let showTabs = false;
+
+    function toggleTabs() {
+        showTabs = !showTabs;
+    }
+
     import Aboutme from "$lib/Aboutme.svelte";
 
     import Contact from "$lib/Contact.svelte";
@@ -55,10 +61,7 @@
 
     let testMode: Boolean = false;
     import Partnere from "$lib/Partnere.svelte";
-
-    
 </script>
-
 
 {#if testMode}
     <Partnere />
@@ -170,9 +173,18 @@
         </div>
     </section>
 
-    <Tabs />
-
-    <AndreYdelser/>
+    <div class="text-center">
+        <button
+            class="btn btn-wide btn-primary text-white text-center"
+            on:click={toggleTabs}
+        >
+            {showTabs ? "Skjul andre ydelser" : "Vis andre ydelser"}
+        </button>
+    </div>
+    {#if showTabs}
+        <Tabs />
+    {/if}
+    <AndreYdelser />
 
     <Partnere />
 
