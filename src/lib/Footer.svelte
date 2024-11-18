@@ -4,7 +4,7 @@
 
 <footer class="footer footer-center text-primary p-10 bg-[whitesmoke] border-primary">
     <aside>
-        <img src={logo} alt="Logo" class="h-20 w-auto" />
+        <!-- <img src={logo} alt="Logo" class="h-20 w-auto" /> -->
         <p class="font-bold">
             Toldboden 3D, 1. 8800 Viborg
             <br>

@@ -50,7 +50,7 @@
   }
 </script>
 
-<div id="kontakt" class="max-w-2xl mx-auto my-44 p-8 bg-white shadow-lg rounded-lg">
+<div class="">
   <form on:submit|preventDefault={handleSubmit} class="space-y-6">
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div>
@@ -95,8 +95,8 @@
       <textarea id="besked" bind:value={besked} required class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg" rows="5"></textarea>
     </div>
     <div>
-      <button type="submit" class="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-        Send
+      <button type="submit" class="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-primary hover:bg-[#996633f1] focus:outline-none focus:ring-2 focus:ring-offset-2">
+        Send besked
       </button>
     </div>
     {#if status}

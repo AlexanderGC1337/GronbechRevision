@@ -12,7 +12,7 @@
         <Navbar />
     </header>
 
-    <main class="flex-grow bg-[#f5f4f44e]">
+    <main class="">
         <slot />
     </main>
 

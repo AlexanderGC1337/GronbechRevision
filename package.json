@@ -36,6 +36,7 @@
 		"express": "^4.19.2",
 		"nodemailer": "^6.9.14",
 		"svelte-inview": "^4.0.2",
-		"svelte-routing": "^2.13.0"
+		"svelte-routing": "^2.13.0",
+		"svelte-uicons": "^0.1.4"
 	}
 }

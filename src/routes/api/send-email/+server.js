@@ -9,7 +9,7 @@ export async function POST({ request }) {
 
   const msg = {
     to: process.env.TO_EMAIL,
-    from: process.env.FROM_EMAIL, // This needs to be a verified sender in SendGrid
+    from: process.env.FROM_EMAIL,
     subject: `Ny henvendelse: ${emne}`,
     text: `
       Navn: ${navn}

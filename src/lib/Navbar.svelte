@@ -106,8 +106,8 @@
             {#if $page.url.pathname !== '/cafe'}
             <div class="flex items-center space-x-2">
                 <a
-                    href="#kontakt"
-                    on:click|preventDefault={() => scrollToSection("kontakt")}
+                    href="/kontakt"
+                    
                     class="btn glass bg-orange-500 hover:bg-orange-400 text-white border-none uppercase tracking-wider transition-all duration-300 ease-in-out text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2"
                 >
                     Kontakt

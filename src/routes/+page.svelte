@@ -178,7 +178,7 @@
 
     <Aboutme />
 
-    <Contact />
+    <!-- <Contact /> -->
 {/if}
 
 <!-- <style>
