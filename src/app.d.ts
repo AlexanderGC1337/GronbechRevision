@@ -2,12 +2,15 @@
 // for information about these interfaces
 declare global {
 	namespace App {
-		// interface Error {}
-		// interface Locals {}
-		// interface PageData {}
-		// interface PageState {}
-		// interface Platform {}
+	  interface Locals {}
+	  interface PageData {}
+	  interface Error {}
+	  interface Platform {}
 	}
-}
-
-export {};
+	interface ImportMetaEnv {
+	  GMAIL_USER: string;
+	  GMAIL_APP_PASSWORD: string;
+	}
+  }
+  
+  export {};

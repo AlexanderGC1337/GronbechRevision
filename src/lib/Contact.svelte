@@ -1,108 +1,227 @@
-<script>
-  let navn = '';
-  let tlf = '';
-  let mail = '';
-  let cvr = '';
-  let emne = '';
-  let besked = '';
-  let status = '';
+<script lang="ts">
+    import { onDestroy } from 'svelte';
 
-  function handleInput(event, field) {
-    let value = event.target.value.replace(/\D/g, '').slice(0, 8);
-    if (field === 'tlf') {
-      tlf = value;
-    } else if (field === 'cvr') {
-      cvr = value;
+    let formData = {
+        name: "",
+        cvr: "",
+        tlf: "",
+        email: "",
+        message: "",
+    };
+    let status = "";
+    let loading = false;
+    let errors = {
+        tlf: "",
+        cvr: ""
+    };
+    let statusTimeout: NodeJS.Timeout;
+
+    let num1 = Math.floor(Math.random() * 10);
+    let num2 = Math.floor(Math.random() * 10);
+    let userAnswer = "";
+    let captchaValid = false;
+
+    onDestroy(() => {
+        if (statusTimeout) clearTimeout(statusTimeout);
+    });
+
+    function setTemporaryStatus(message: string) {
+        status = message;
+        if (statusTimeout) clearTimeout(statusTimeout);
+        statusTimeout = setTimeout(() => {
+            status = "";
+        }, 5000);
     }
-  }
 
-  function validateInput(value) {
-    return value.length === 8;
-  }
-
-  async function handleSubmit() {
-    if (!validateInput(tlf) || !validateInput(cvr)) {
-      status = 'Tlf og CVR skal være præcis 8 cifre.';
-      return;
+    function validateCaptcha(): boolean {
+        return parseInt(userAnswer) === num1 + num2;
     }
 
-    status = 'Sender...';
-    
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ navn, tlf, mail, cvr, emne, besked }),
-      });
-      
-      if (response.ok) {
-        status = 'Besked sendt succesfuldt!';
-        navn = tlf = mail = cvr = emne = besked = '';
-      } else {
-        status = 'Kunne ikke sende besked. Prøv venligst igen.';
-      }
-    } catch (error) {
-      console.error('Fejl:', error);
-      status = 'Der opstod en fejl. Prøv venligst igen senere.';
+    function validateTlf(value: string): boolean {
+        const regex = /^\d{1,8}$/;
+        if (!regex.test(value)) {
+            errors.tlf = "Telefonnummer skal være 1-8 tal";
+            return false;
+        }
+        errors.tlf = "";
+        return true;
     }
-  }
+
+    function handleTlfInput(event: Event) {
+        const input = event.target as HTMLInputElement;
+        formData.tlf = input.value.replace(/\D/g, '').slice(0, 8);
+        validateTlf(formData.tlf);
+    }
+
+    function validateCvr(value: string): boolean {
+        const regex = /^\d{1,8}$/;
+        if (!regex.test(value)) {
+            errors.cvr = "CVR nummer skal være 1-8 tal";
+            return false;
+        }
+        errors.cvr = "";
+        return true;
+    }
+
+    function handleCvrInput(event: Event) {
+        const input = event.target as HTMLInputElement;
+        formData.cvr = input.value.replace(/\D/g, '').slice(0, 8);
+        validateCvr(formData.cvr);
+    }
+
+    function resetForm() {
+        formData = {
+            name: "",
+            cvr: "",
+            tlf: "",
+            email: "",
+            message: "",
+        };
+        errors = {
+            tlf: "",
+            cvr: ""
+        };
+        num1 = Math.floor(Math.random() * 10);
+        num2 = Math.floor(Math.random() * 10);
+        userAnswer = "";
+        captchaValid = false;
+    }
+
+    async function handleSubmit() {
+        const tlfValid = validateTlf(formData.tlf);
+        const cvrValid = validateCvr(formData.cvr);
+        
+        if (!tlfValid || !cvrValid) {
+            return;
+        }
+
+        if (!validateCaptcha()) {
+            setTemporaryStatus("Forkert svar på regnestykket. Prøv igen.");
+            return;
+        }
+
+        loading = true;
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                resetForm();
+                setTemporaryStatus("Beskeden er blevet sendt.");
+            } else {
+                setTemporaryStatus("Der skete en fejl. Prøv igen senere.");
+            }
+        } catch (error) {
+            setTemporaryStatus("Der skete en fejl. Prøv igen senere.");
+        } finally {
+            loading = false;
+        }
+    }
 </script>
 
-<div class="">
-  <form on:submit|preventDefault={handleSubmit} class="space-y-6">
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      <div>
-        <label for="navn" class="block text-sm font-medium text-gray-700 mb-1">Navn:</label>
-        <input id="navn" type="text" bind:value={navn} required class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg" />
-      </div>
-      <div>
-        <label for="tlf" class="block text-sm font-medium text-gray-700 mb-1">Tlf:</label>
-        <input 
-          id="tlf" 
-          type="text" 
-          inputmode="numeric" 
-          bind:value={tlf} 
-          on:input={(e) => handleInput(e, 'tlf')}
-          required 
-          class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg" 
+<form
+    on:submit|preventDefault={handleSubmit}
+    class="max-w-md mx-auto p-6 space-y-2"
+>
+    <div class="flex gap-4">
+        <div>
+            <label for="name" class="block text-sm font-medium mb-1">Navn</label>
+            <input
+                id="name"
+                type="text"
+                bind:value={formData.name}
+                required
+                class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500"
+            />
+        </div>
+    
+        <div>
+            <label for="email" class="block text-sm font-medium mb-1">E-mail</label>
+            <input
+                id="email"
+                type="email"
+                bind:value={formData.email}
+                required
+                class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500"
+            />
+        </div>
+    </div>
+
+    <div class="flex gap-4">
+        <div>
+            <label for="tlf" class="block text-sm font-medium mb-1">Tlf nr.</label>
+            <input
+                id="tlf"
+                type="text"
+                bind:value={formData.tlf}
+                on:input={handleTlfInput}
+                required
+                class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500"
+            />
+            {#if errors.tlf}
+                <p class="text-red-500 text-sm mt-1">{errors.tlf}</p>
+            {/if}
+        </div>
+        <div>
+            <label for="cvr" class="block text-sm font-medium mb-1">Cvr nr.</label>
+            <input
+                id="cvr"
+                type="text"
+                bind:value={formData.cvr}
+                on:input={handleCvrInput}
+                required
+                class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500"
+            />
+            {#if errors.cvr}
+                <p class="text-red-500 text-sm mt-1">{errors.cvr}</p>
+            {/if}
+        </div>
+    </div>
+
+    <div>
+        <label for="message" class="block text-sm font-medium mb-1">Din besked</label>
+        <textarea
+            id="message"
+            bind:value={formData.message}
+            required
+            rows="4"
+            class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500"
+        ></textarea>
+    </div>
+
+    <div class="border p-4 rounded bg-gray-50">
+        <label class="block text-sm font-medium mb-1">
+            Bekræft at du ikke er en robot: Hvad er {num1} + {num2}?
+        </label>
+        <input
+            type="number"
+            bind:value={userAnswer}
+            required
+            class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500"
+            placeholder="Skriv dit svar her"
         />
-      </div>
-      <div>
-        <label for="mail" class="block text-sm font-medium text-gray-700 mb-1">Mail:</label>
-        <input id="mail" type="email" bind:value={mail} required class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg" />
-      </div>
-      <div>
-        <label for="cvr" class="block text-sm font-medium text-gray-700 mb-1">CVR:</label>
-        <input 
-          id="cvr" 
-          type="text" 
-          inputmode="numeric" 
-          bind:value={cvr} 
-          on:input={(e) => handleInput(e, 'cvr')}
-          required 
-          class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg" 
-        />
-      </div>
     </div>
-    <div>
-      <label for="emne" class="block text-sm font-medium text-gray-700 mb-1">Emne:</label>
-      <input id="emne" type="text" bind:value={emne} required class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg" />
-    </div>
-    <div>
-      <label for="besked" class="block text-sm font-medium text-gray-700 mb-1">Besked:</label>
-      <textarea id="besked" bind:value={besked} required class="block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg" rows="5"></textarea>
-    </div>
-    <div>
-      <button type="submit" class="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-primary hover:bg-[#996633f1] focus:outline-none focus:ring-2 focus:ring-offset-2">
-        Send besked
-      </button>
-    </div>
+
+    <button
+        type="submit"
+        disabled={loading}
+        class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 disabled:opacity-50"
+    >
+        {loading ? "Sender..." : "Send besked"}
+    </button>
+
     {#if status}
-      <p class="mt-2 text-lg text-center" class:text-green-600={status.includes('succesfuldt')} class:text-red-600={!status.includes('succesfuldt')}>
-        {status}
-      </p>
+        <p
+            class={status.includes("Beskeden er blevet sendt.")
+                ? "text-green-600 text-center"
+                : "text-red-600 text-center"}
+        >
+            {status}
+        </p>
     {/if}
-  </form>
-</div>
+</form>

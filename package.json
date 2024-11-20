@@ -34,7 +34,9 @@
 		"daisyui": "^4.12.10",
 		"dotenv": "^16.4.5",
 		"express": "^4.19.2",
-		"nodemailer": "^6.9.14",
+		"form-data": "^4.0.1",
+		"mailgun.js": "^10.2.3",
+		"nodemailer": "^6.9.16",
 		"svelte-inview": "^4.0.2",
 		"svelte-routing": "^2.13.0",
 		"svelte-uicons": "^0.1.4"
