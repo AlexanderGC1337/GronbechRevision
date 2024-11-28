@@ -64,7 +64,7 @@
     }
   </script>
   
-  <div class="mb-40 p-4 sm:p-6 md:p-8">
+  <div class="mb-40 p-4 sm:p-6 md:p-8" id="kunde">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-800 text-center mb-6 sm:mb-8 md:mb-12">
         Når du bliver kunde hos mig
