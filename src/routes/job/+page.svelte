@@ -139,10 +139,7 @@
         <section class="bg-amber-50 p-6 rounded-lg">
           <h3 class="text-xl font-semibold text-gray-900 mb-4">Nysgerrig efter at vide mere?</h3>
           <p class="text-gray-700 mb-6">
-            Ring gerne til mig hvis du har spørgsmål til stillingen eller besøg min hjemmeside 
-            <a href="https://gronbechrevision.dk" class="text-amber-700 hover:text-amber-800 underline">
-              gronbechrevision.dk
-            </a>
+            Ring gerne til mig hvis du har spørgsmål til stillingen.
           </p>
 
           <div class="space-y-4">
