@@ -82,7 +82,7 @@
             </div>
 
             <!-- Desktop Links (hidden on mobile) -->
-            {#if !$currentUser && $page.url.pathname !== "/cafe"}
+            {#if !$currentUser && $page.url.pathname !== "/job"}
                 <div
                     class="hidden md:flex items-center space-x-1 lg:space-x-4 font-semibold tracking-wide"
                 >
@@ -111,11 +111,9 @@
                         >Om mig</a
                     >
                     <a
-                        href="/cafe"
-                        on:click|preventDefault={() =>
-                            openLinkAndClose("/cafe")}
+                        href="/job"
                         class="text-gray-800 hover:text-primary px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm uppercase"
-                        >Bogføringscafé</a
+                        >Job</a
                     >
                 </div>
             {/if}
@@ -165,7 +163,7 @@
     </div>
 
     <!-- Mobile menu (only show when not logged in) -->
-    {#if isMobileMenuOpen && !$currentUser && $page.url.pathname !== "/cafe"}
+    {#if isMobileMenuOpen && !$currentUser && $page.url.pathname !== "/job"}
         <div class="md:hidden" transition:fade={{ duration: 200 }}>
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-md">
                 <a
@@ -193,10 +191,9 @@
                     >Om mig</a
                 >
                 <a
-                    href="/cafe"
-                    on:click|preventDefault={() => openLinkAndClose("/cafe")}
+                    href="/job"
                     class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
-                    >Bogføringscafé</a
+                    >Job</a
                 >
             </div>
         </div>

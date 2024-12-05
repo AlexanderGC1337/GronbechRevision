@@ -25,6 +25,5 @@
     /* This ensures that the page takes up at least the full viewport height */
     :global(body, html) {
         height: 100%;
-        background-color: #f5f4f44e;
     }
 </style>
