@@ -35,6 +35,32 @@
                 >
                     Om mig
                 </h2>
+                <!--  {#if isLoading}
+                    <div class="flex justify-center items-center min-h-screen">
+                        <div
+                            class="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"
+                        ></div>
+                    </div>
+                {:else if error}
+                    <div class="text-red-500 p-4">
+                        Error: {error}
+                    </div>
+                {:else}
+                    <section class="max-w-4xl mx-auto px-4 py-8">
+                        
+
+                        <div class="space-y-6">
+                            <p class="text-lg">{aboutData.text1}</p>
+                            <p class="text-lg">{aboutData.text2}</p>
+                            <p class="text-lg">{aboutData.text3}</p>
+                            <h1 class="text-3xl font-bold mb-8">
+                                {aboutData.title}
+                            </h1>
+                            <p class="text-lg">{aboutData.text4}</p>
+                            <p class="text-lg">{aboutData.text5}</p>
+                        </div>
+                    </section>
+                {/if} -->
                 <div class="space-y-3 text-sm sm:text-base text-gray-700">
                     <p>
                         Mit navn er Berith Nanett Grønbech, og jeg stiftede
