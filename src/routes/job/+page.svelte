@@ -82,8 +82,8 @@
     
     <div class="space-y-4">
       {#each pastJobs as job (job.id)}
-      <a target="_blank" href={"/job/" + job.slug}>
-        <div class="block bg-gray-50 rounded-lg border border-gray-200 p-6">
+      <a href={"/job/" + job.slug}>
+        <div class="block hover:shadow-md bg-gray-50 rounded-lg border border-gray-200 p-6">
           <h3 class="text-xl font-semibold text-gray-700 mb-2">{job.title}</h3>
           <div class="flex flex-wrap gap-4 text-gray-600 mb-3">
             <div class="flex items-center">

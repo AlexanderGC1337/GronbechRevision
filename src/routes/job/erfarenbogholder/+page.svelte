@@ -2,7 +2,24 @@
     import { CheckCircle, Phone, Mail, MapPin, Clock, DollarSign } from 'lucide-svelte';
   </script>
   
+
+  
+
+
+  
   <div class="min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8 py-28">
+    <div class="flex gap-1 items-center max-w-4xl py-6 mx-auto">
+      <div class="w-[35px]">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <!-- Arrow stem -->
+          <path d="M13 8H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Arrow head -->
+          <path d="M7 11L4 8L7 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        
+      </div>
+      <a class="hover:text-orange-500 text-xl" href="/job">Gå tilbage</a>
+    </div>
     <div class="max-w-4xl mx-auto">
       <!-- Quick Info Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
