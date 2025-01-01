@@ -138,7 +138,7 @@
             <a href={cookiePdf} target="_blank" class="text-sm md:text-base hover:underline">Cookie- og privatlivspolitik</a>
             <a href={hvidvaskPdf} target="_blank" class="text-sm md:text-base hover:underline">Hvidvask politik</a>
             <a href={handelPdf} target="_blank" class="text-sm md:text-base hover:underline">Handelsbetingelser</a>
-            <a href={prisPdf} target="_blank" class="text-sm md:text-base hover:underline">Prisliste</a>
+            <!-- <a href={prisPdf} target="_blank" class="text-sm md:text-base hover:underline">Prisliste</a> -->
         </div>
     </nav>
 </footer>

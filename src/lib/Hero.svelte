@@ -49,7 +49,7 @@ style={backgroundStyle}
     transition:fly="{{ y: 50, duration: 1000, delay: 200 }}"
   >
     <div class="flex flex-col items-center">
-      <h1 class="mb-5 font-bold leading-tight {fontSize}">Digital bogføring i øjenhøjde</h1>
+      <h1 class="mb-5 text-[#ffffff] font-bold leading-tight {fontSize}">Digital bogføring i øjenhøjde</h1>
       <div class="flex gap-2 md:flex-row flex-col">
 
         <a 

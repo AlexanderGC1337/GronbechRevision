@@ -82,7 +82,7 @@
             </div>
 
             <!-- Desktop Links (hidden on mobile) -->
-            {#if !$currentUser && $page.url.pathname !== "/job"}
+            {#if !$currentUser && $page.url.pathname !== "/job" && $page.url.pathname !== "/prisliste" }
                 <div
                     class="hidden md:flex items-center space-x-1 lg:space-x-4 font-semibold tracking-wide"
                 >
@@ -99,16 +99,15 @@
                         >Ydelser</a
                     >
                     <a
-                        href="#kunde"
-                        on:click|preventDefault={() => scrollToSection("kunde")}
-                        class="text-gray-800 hover:text-primary px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm uppercase"
-                        >Priser</a
+                    href="#ommig"
+                    on:click|preventDefault={() => scrollToSection("ommig")}
+                    class="text-gray-800 hover:text-primary px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm uppercase"
+                    >Om mig</a
                     >
                     <a
-                        href="#ommig"
-                        on:click|preventDefault={() => scrollToSection("ommig")}
+                        href="/prisliste"
                         class="text-gray-800 hover:text-primary px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm uppercase"
-                        >Om mig</a
+                        >Priser</a
                     >
                     <a
                         href="/job"
@@ -179,16 +178,15 @@
                     >Ydelser</a
                 >
                 <a
-                    href="#kunde"
-                    on:click|preventDefault={() => scrollToSection("kunde")}
-                    class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
-                    >Priser</a
+                href="#ommig"
+                on:click|preventDefault={() => scrollToSection("ommig")}
+                class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                >Om mig</a
                 >
                 <a
-                    href="#ommig"
-                    on:click|preventDefault={() => scrollToSection("ommig")}
+                    href="/prisliste"
                     class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
-                    >Om mig</a
+                    >Priser</a
                 >
                 <a
                     href="/job"

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Profile from "./assets/images/profile.jpg";
+    import Profile from "./assets/images/profile2.jpg";
     import Bogholder from "./assets/partnere/thumbnail_Bogholderforeningen.jpg";
     import { onMount } from "svelte";
 
@@ -64,8 +64,7 @@
                 <div class="space-y-3 text-sm sm:text-base text-gray-700">
                     <p>
                         Mit navn er Berith Nanett Grønbech, og jeg stiftede
-                        Grønbech Revision i november 2020 under navnet
-                        OfficeBoost.
+                        Grønbech Revision i november 2020.
                     </p>
                     <p>
                         Med min erfaring indenfor bogføring og regnskab hjælper

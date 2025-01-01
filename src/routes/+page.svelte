@@ -134,6 +134,9 @@
             </p>
         {/each}
     </section>
+
+    <AndreYdelser />
+
     <div id="ydelser" class="mb-10"></div>
     <section class=" py-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
@@ -173,7 +176,7 @@
         </div>
     </section>
 
-    <div class="text-center">
+    <!-- <div class="text-center">
         <button
             class="btn btn-wide btn-primary text-white text-center"
             on:click={toggleTabs}
@@ -183,10 +186,12 @@
     </div>
     {#if showTabs}
         <Tabs />
-    {/if}
-    <AndreYdelser />
+    {/if} -->
+    
+    <div class="pt-16">
+        <Partnere />
 
-    <Partnere />
+    </div>
 
     <Aboutme />
 
