@@ -48,7 +48,7 @@
     }
 </script>
 
-<div class="w-full min-h-screen bg-gray-50">
+<div class="w-full min-h-screen bg-gray-50 pt-14">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
     <div class="mb-8 sm:mb-12">
       <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-2">Prisliste 2025</h1>
