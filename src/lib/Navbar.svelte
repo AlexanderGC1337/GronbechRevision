@@ -162,7 +162,7 @@
     </div>
 
     <!-- Mobile menu (only show when not logged in) -->
-    {#if isMobileMenuOpen && !$currentUser && $page.url.pathname !== "/job"}
+    {#if isMobileMenuOpen && $page.url.pathname !== "/job" && $page.url.pathname !== "/prisliste"}
         <div class="md:hidden" transition:fade={{ duration: 200 }}>
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-md">
                 <a
@@ -185,11 +185,77 @@
                 >
                 <a
                     href="/prisliste"
+                    on:click={()=> {
+                        isMobileMenuOpen = false
+                    }}
                     class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
                     >Priser</a
                 >
                 <a
                     href="/job"
+                    on:click={()=> {
+                        isMobileMenuOpen = false
+                    }}
+                    class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                    >Job</a
+                >
+            </div>
+        </div>
+        {:else if isMobileMenuOpen && $page.url.pathname === "/job"}
+        <div class="md:hidden" transition:fade={{ duration: 200 }}>
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-md">
+                <a
+                    href="/"
+                    on:click={()=> {
+                        isMobileMenuOpen = false
+                    }}
+                    class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                    >Forside</a
+                >
+                
+                <a
+                    href="/prisliste"
+                    on:click={()=> {
+                        isMobileMenuOpen = false
+                    }}
+                    class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                    >Priser</a
+                >
+                <a
+                    href="/job"
+                    on:click={()=> {
+                        isMobileMenuOpen = false
+                    }}
+                    class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                    >Job</a
+                >
+            </div>
+        </div>
+        {:else if isMobileMenuOpen && $page.url.pathname === "/prisliste"}
+        <div class="md:hidden" transition:fade={{ duration: 200 }}>
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-md">
+                <a
+                    href="/"
+                    on:click={()=> {
+                        isMobileMenuOpen = false
+                    }}
+                    class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                    >Forside</a
+                >
+                
+                <a
+                    href="/prisliste"
+                    on:click={()=> {
+                        isMobileMenuOpen = false
+                    }}
+                    class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                    >Priser</a
+                >
+                <a
+                    href="/job"
+                    on:click={()=> {
+                        isMobileMenuOpen = false
+                    }}
                     class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
                     >Job</a
                 >

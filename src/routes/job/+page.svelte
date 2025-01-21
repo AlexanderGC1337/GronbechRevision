@@ -29,6 +29,18 @@
 
 <div class="max-w-4xl mx-auto px-4 pt-28 pb-20">
   <!-- Active Jobs Section -->
+  <div class="flex gap-1 items-center max-w-4xl py-6 mx-auto">
+    <div class="w-[35px]">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <!-- Arrow stem -->
+        <path d="M13 8H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- Arrow head -->
+        <path d="M7 11L4 8L7 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      
+    </div>
+    <a class="hover:text-orange-500 text-xl" href="/">Gå tilbage</a>
+  </div>
   <section>
     <h1 class="text-4xl font-bold text-gray-900 mb-8">Aktuelle job opslag</h1>
     

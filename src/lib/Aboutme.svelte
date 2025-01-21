@@ -23,14 +23,14 @@
     });
 </script>
 
-<div id="ommig">‎</div>
+<!-- <div id="ommig">‎</div> -->
 <div
     class="relative w-full max-w-6xl rounded border overflow-hidden my-8 sm:my-12 bg-white shadow-lg mx-auto"
 >
     <div class="flex flex-col lg:flex-row">
         <div class="lg:w-1/2 order-2 lg:order-1 px-6 py-8 lg:px-12 lg:py-12">
             <div class="max-w-md mx-auto lg:mx-0">
-                <h2
+                <h2 id="ommig"
                     class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center"
                 >
                     Om mig

@@ -137,10 +137,10 @@
 
     <AndreYdelser />
 
-    <div id="ydelser" class="mb-10"></div>
+    <!-- <div id="ydelser" class="mb-10"></div> -->
     <section class=" py-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-semibold text-gray-800 mb-12 text-center">
+            <h2 id="ydelser" class="text-3xl font-semibold text-gray-800 mb-12 text-center">
                 Jeg tilbyder
             </h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">

@@ -48,8 +48,18 @@
     }
 </script>
 
-<div class="w-full min-h-screen bg-gray-50 pt-14">
+<div class="w-full min-h-screen bg-gray-50 ">
+  
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <div class="flex gap-2 items-center py-8 sm:py-12">
+      <div class="w-6 sm:w-8">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-full h-full">
+          <path d="M13 8H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M7 11L4 8L7 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <a href="/" class="hover:text-orange-500 text-lg sm:text-xl transition-colors duration-200">Gå tilbage</a>
+    </div>
     <div class="mb-8 sm:mb-12">
       <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-2">Prisliste 2025</h1>
       <p class="text-center text-gray-600 text-sm sm:text-base">Alle priser er ex moms</p>
@@ -78,14 +88,6 @@
       <p>Pris for abonnementer hos Dataløn & e-conomic er ikke med.</p>
     </div>
 
-    <div class="flex gap-2 items-center py-8 sm:py-12">
-      <div class="w-6 sm:w-8">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-full h-full">
-          <path d="M13 8H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M7 11L4 8L7 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <a href="/" class="hover:text-orange-500 text-lg sm:text-xl transition-colors duration-200">Gå tilbage</a>
-    </div>
+    
   </div>
 </div>
