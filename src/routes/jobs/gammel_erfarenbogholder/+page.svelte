@@ -18,7 +18,7 @@
         </svg>
         
       </div>
-      <a class="hover:text-orange-500 text-xl" href="/job">Gå tilbage</a>
+      <a class="hover:text-orange-500 text-xl" href="/jobs">Gå tilbage</a>
     </div>
     <div class="max-w-4xl mx-auto">
       <!-- Quick Info Cards -->

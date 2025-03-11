@@ -82,7 +82,7 @@
             </div>
 
             <!-- Desktop Links (hidden on mobile) -->
-            {#if !$currentUser && $page.url.pathname !== "/job" && $page.url.pathname !== "/prisliste" }
+            {#if !$currentUser && $page.url.pathname !== "/jobs" && $page.url.pathname !== "/prisliste" }
                 <div
                     class="hidden md:flex items-center space-x-1 lg:space-x-4 font-semibold tracking-wide"
                 >
@@ -110,9 +110,9 @@
                         >Priser</a
                     >
                     <a
-                        href="/job"
+                        href="/jobs"
                         class="text-gray-800 hover:text-primary px-2 lg:px-3 py-2 rounded-md text-xs lg:text-sm uppercase"
-                        >Job</a
+                        >Ledige stillinger</a
                     >
                 </div>
             {/if}
@@ -162,7 +162,7 @@
     </div>
 
     <!-- Mobile menu (only show when not logged in) -->
-    {#if isMobileMenuOpen && $page.url.pathname !== "/job" && $page.url.pathname !== "/prisliste"}
+    {#if isMobileMenuOpen && $page.url.pathname !== "/jobs" && $page.url.pathname !== "/prisliste"}
         <div class="md:hidden" transition:fade={{ duration: 200 }}>
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-md">
                 <a
@@ -192,16 +192,16 @@
                     >Priser</a
                 >
                 <a
-                    href="/job"
+                    href="/jobs"
                     on:click={()=> {
                         isMobileMenuOpen = false
                     }}
                     class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
-                    >Job</a
+                    >Ledige stillinger</a
                 >
             </div>
         </div>
-        {:else if isMobileMenuOpen && $page.url.pathname === "/job"}
+        {:else if isMobileMenuOpen && $page.url.pathname === "/jobs"}
         <div class="md:hidden" transition:fade={{ duration: 200 }}>
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-md">
                 <a
@@ -222,12 +222,12 @@
                     >Priser</a
                 >
                 <a
-                    href="/job"
+                    href="/jobs"
                     on:click={()=> {
                         isMobileMenuOpen = false
                     }}
                     class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
-                    >Job</a
+                    >Ledige stillinger</a
                 >
             </div>
         </div>
@@ -252,12 +252,12 @@
                     >Priser</a
                 >
                 <a
-                    href="/job"
+                    href="/jobs"
                     on:click={()=> {
                         isMobileMenuOpen = false
                     }}
                     class="text-gray-800 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
-                    >Job</a
+                    >Ledige stillinger</a
                 >
             </div>
         </div>

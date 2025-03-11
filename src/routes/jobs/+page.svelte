@@ -8,10 +8,21 @@
       department: 'Bogføring',
       location: 'Viborg',
       type: 'Del-tid',
-      slug: 'erfarenbogholder',
+      slug: 'gammel_erfarenbogholder',
       isActive: false,
       postedDate: '2024-12-01',
       closingDate: '2024-12-20'
+    },
+    {
+      id: 2,
+      title: 'Erfaren bogholder',
+      department: 'Bogføring',
+      location: 'Viborg',
+      type: 'Del-tid',
+      slug: 'erfarenbogholder',
+      isActive: true,
+      postedDate: '2025-03-11',
+      closingDate: '2025-04-11'
     }
   ];
 
@@ -94,8 +105,8 @@
     
     <div class="space-y-4">
       {#each pastJobs as job (job.id)}
-      <a href={"/job/" + job.slug}>
-        <div class="block hover:shadow-md bg-gray-50 rounded-lg border border-gray-200 p-6">
+      <a href={"/jobs/" + job.slug}>
+        <div class="block hover:shadow-md bg-gray-50 rounded-lg border border-gray-200 p-6 my-4">
           <h3 class="text-xl font-semibold text-gray-700 mb-2">{job.title}</h3>
           <div class="flex flex-wrap gap-4 text-gray-600 mb-3">
             <div class="flex items-center">

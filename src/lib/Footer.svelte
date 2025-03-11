@@ -12,7 +12,7 @@
     <aside>
         <!-- <img src={logo} alt="Logo" class="h-20 w-auto" /> -->
         <p class="font-bold">
-            Toldboden 3D, 1. 8800 Viborg
+            Toldboden 3D, 2. 8800 Viborg
             <br />
             CVR: 33450087
         </p>
