@@ -4,9 +4,9 @@
       bookkeeping: {
         title: "Bogføring",
         items: [
-          { name: "Opstartsfee (engangsbeløb ved opstart som kunde)", price: "1.995,00" },
-          { name: "Bogføring og administration mit kontor pr. time", price: "485,00" },
-          { name: "Bogføring og administration hos kunde pr. time", price: "525,00" }
+          { name: "Opstartsfee (engangsbeløb ved opstart som kunde)", price: "2.500,00" },
+          { name: "Bogføring og administration mit kontor pr. time", price: "525,00" },
+          { name: "Bogføring og administration hos kunde pr. time", price: "625,00" }
         ]
       },
       payroll: {
@@ -30,10 +30,10 @@
       misc: {
         title: "Diverse",
         items: [
-          { name: "Møder (Teams/Fysisk) pr. time", price: "500,00" },
-          { name: "Tillæg v/hasteopgaver pr. time", price: "485,00" },
-          { name: "Årlig KYC-kontrol jf. Hvidvasklovens §7", price: "500,00" },
-          { name: "Lovpligtig beskrivelse af bogføringsprocedure (engangsbeløb)", price: "750,00" },
+          { name: "Møder (Teams/Fysisk) pr. time", price: "625,00" },
+          { name: "Tillæg v/hasteopgaver pr. time", price: "525,00" },
+          { name: "Årlig KYC-kontrol jf. Hvidvasklovens §7", price: "750,00" },
+          { name: "Lovpligtig beskrivelse af bogføringsprocedure (engangsbeløb)", price: "1000,00" },
           { name: "Kursus/undervisning 1:1 pr. time", price: "1.000,00" },
           { name: "Kørsel pr. km", price: "Statens takster" },
           { name: "Konvertering fra andet regnskabsprogram", price: "Ring for pris" }
