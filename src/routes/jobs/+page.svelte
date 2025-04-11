@@ -20,7 +20,7 @@
       location: 'Viborg',
       type: 'Del-tid',
       slug: 'erfarenbogholder',
-      isActive: true,
+      isActive: false,
       postedDate: '2025-03-11',
       closingDate: '2025-04-11'
     }
